@@ -7,6 +7,10 @@ function SingleComponent({singleComponent}) {
     const handleClick = () => setIsOpen(!isOpen);
 
 
+    // useEffect(() => {
+    //     console.log(singleComponent);
+    // }, )
+
     return (
         <>
             <div className="singleComponent__infoWrapper">
@@ -25,7 +29,9 @@ function SingleComponent({singleComponent}) {
                     <ul>
                         {singleComponent.warnings.map((singleWarning, index) => {
                             return <li key={index}>
-                                {singleWarning}
+                                <p className="singleComponent__warningMessage">
+                                    {singleWarning}
+                                </p>
                             </li>
                         })}
                     </ul>
@@ -37,7 +43,9 @@ function SingleComponent({singleComponent}) {
                         <ul>
                             {singleComponent.errors.map((singleError, index) => {
                                 return <li key={index}>
-                                    {singleError}
+                                    <p className="singleComponent__errorMessage">
+                                        {singleError}
+                                    </p>
                                 </li>
                             })}
                         </ul>
