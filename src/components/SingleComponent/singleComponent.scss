@@ -1,0 +1,21 @@
+.singleComponent__infoWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.singleComponent__name {
+  font-weight: bold;
+}
+
+.singleComponent__componentsWrapper {
+  padding: 15px 0 0 15px;
+}
+
+.singleComponent__componentsTitle {
+  text-decoration: underline;
+  margin-bottom: 5px;
+}
+
+.singleComponent__listItem {
+  margin-bottom: 10px;
+}
