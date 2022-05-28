@@ -1,22 +1,21 @@
-.vehicle__infoWrapper {
+.device__infoWrapper {
   display: flex;
   justify-content: space-between;
 }
 
-.vehicle__name {
+.device__name {
   font-weight: bold;
 }
 
-.vehicle__devicesWrapper {
+.device__componentsWrapper {
   padding: 15px 0 0 45px;
 }
 
-
-.vehicle__devicesTitle{
-  margin-bottom: 20px;
+.device__componentsTitle {
   text-decoration: underline;
+  margin-bottom: 20px;
 }
 
-.vehicle__listItem:not(:last-child) {
+.device__listItem {
   margin-bottom: 20px;
 }

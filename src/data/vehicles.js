@@ -4,40 +4,40 @@ class Vehicle {
         this.id = id;
         this.devices = [
             {
-                name: "biletomat nr 1",
+                name: "Biletomat nr 1",
                 components: [
                     {
-                        name: 'terminal płatniczy',
+                        name: 'Terminal płatniczy',
                         warnings: [],
                         errors: [],
                     },
                     {
-                        name: 'czytnik kodów QR',
+                        name: 'Czytnik kodów QR',
                         warnings: [],
                         errors: [],
                     },
                     {
-                        name: 'drukarka termiczna',
+                        name: 'Drukarka termiczna',
                         warnings: [],
                         errors: [],
                     },
                 ]
             },
             {
-                name: "biletomat nr 2",
+                name: "Biletomat nr 2",
                 components: [
                     {
-                        name: 'terminal płatniczy',
+                        name: 'Terminal płatniczy',
                         warnings: [],
                         errors: [],
                     },
                     {
-                        name: 'czytnik kodów QR',
+                        name: 'Czytnik kodów QR',
                         warnings: [],
                         errors: [],
                     },
                     {
-                        name: 'drukarka termiczna',
+                        name: 'Drukarka termiczna',
                         warnings: [],
                         errors: [],
                     },
@@ -47,58 +47,15 @@ class Vehicle {
     }
 }
 
-// const myBus = {
-//     type: 'bus',
-//     id: 123,
-//     devices: [
-//         {
-//             name: "biletomat nr 1",
-//             components: [
-//                 {
-//                     name: 'terminal płatniczy',
-//                     warnings: [],
-//                     errors: [],
-//                 },
-//                 {
-//                     name: 'czytnik kodów QR',
-//                     warnings: [],
-//                     errors: [],
-//                 },
-//                 {
-//                     name: 'drukarka termiczna',
-//                     warnings: [],
-//                     errors: [],
-//                 },
-//             ]
-//         },
-//         {
-//             name: "biletomat nr 2",
-//             components: [
-//                 {
-//                     name: 'terminal płatniczy',
-//                     warnings: [],
-//                     errors: [],
-//                 },
-//                 {
-//                     name: 'czytnik kodów QR',
-//                     warnings: [],
-//                     errors: [],
-//                 },
-//                 {
-//                     name: 'drukarka termiczna',
-//                     warnings: [],
-//                     errors: [],
-//                 },
-//             ],
-//         },
-//     ],
-// };
-
-const bus1 = new Vehicle('bus', 1);
-const tram1 = new Vehicle('tram', 1);
-
-
 const vehiclesArray = [];
-vehiclesArray.push(bus1, tram1);
+const addVehiclesToArray = (vehicle, number) => {
+    for (let i = 0; i < number; i++) {
+        const newVehicle = new Vehicle(vehicle, i + 1);
+        vehiclesArray.push(newVehicle);
+    }
+};
+
+addVehiclesToArray("Autobus", 10);
+addVehiclesToArray("Tramwaj", 10);
 
 export default vehiclesArray;

@@ -5,6 +5,16 @@
   padding: 40px;
 }
 
+.mainPage__searchWrapper{
+  margin-bottom: 20px;
+}
+
+.vehicleList {
+  border: 1px solid black;
+  padding: 10px;
+  max-height: 70vh;
+  overflow: auto;
+}
 
 .vehicleList__item {
   margin: 20px 0 20px 0;
