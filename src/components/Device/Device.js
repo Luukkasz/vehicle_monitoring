@@ -30,17 +30,18 @@ function Device({singleDevice}) {
                     <span className="device__name">{singleDevice.name}</span>
                     <span className="device__info">
                     {warnings.length > 0 && errors.length > 0 ?
-                        `Ilość ostrzeżeń: ${warnings.length}, ilość błędów: ${errors.length}`
+                        `Ilość ostrzeżeń: ${warnings.flat().length}, ilość błędów: ${errors.flat().length}`
                         : warnings.length > 0 ?
-                            `Ilość ostrzeżeń: ${warnings.length}`
+                            `Ilość ostrzeżeń: ${warnings.flat().length}`
                             : errors.length > 0 ?
-                                `Ilość błędów: ${errors.length}`
-                                : ''
-                    }
+                                `Ilość błędów: ${errors.flat().length}`
+                                : ''}
                      </span>
                 </div>
 
-                <button onClick={handleClick}>
+                <button
+                    className="device__btn"
+                    onClick={handleClick}>
                     {isOpen ? 'Ukryj komponenty'
                         : 'Wyświetl komponenty'}
                 </button>

@@ -9,7 +9,14 @@
 
 .device__info {
   margin-left: 10px;
-  color: red;
+  color: #ff7070;
+}
+
+.device__btn {
+  width: 140px;
+  border: none;
+  background-color: #e5eeff;
+  border-radius: 25px;
 }
 
 .device__componentsWrapper {
