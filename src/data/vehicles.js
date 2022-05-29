@@ -1,69 +1,6 @@
-class Vehicle {
-    constructor(type, id) {
-        this.type = type;
-        this.id = id;
-        this.devices = [
-            {
-                name: "Biletomat nr 1",
-                components: [
-                    {
-                        name: 'Terminal płatniczy',
-                        warnings: [],
-                        errors: [],
-                    },
-                    {
-                        name: 'Czytnik kodów QR',
-                        warnings: [],
-                        errors: [],
-                    },
-                    {
-                        name: 'Drukarka termiczna',
-                        warnings: [],
-                        errors: [],
-                    },
-                ]
-            },
-            {
-                name: "Biletomat nr 2",
-                components: [
-                    {
-                        name: 'Terminal płatniczy',
-                        warnings: [],
-                        errors: [],
-                    },
-                    {
-                        name: 'Czytnik kodów QR',
-                        warnings: [],
-                        errors: [],
-                    },
-                    {
-                        name: 'Drukarka termiczna',
-                        warnings: [],
-                        errors: [],
-                    },
-                ],
-            },
-        ];
-    };
+import {Vehicle} from "../helpers/vehicleClass";
 
-    addError(errorValue, deviceNumber, componentNumber) {
-        this
-            .devices[deviceNumber-1]
-            .components[componentNumber-1]
-            .errors.push(errorValue)
-    };
-
-    addWarning(warningValue, deviceNumber, componentNumber) {
-        this
-            .devices[deviceNumber-1]
-            .components[componentNumber-1]
-            .warnings.push(warningValue)
-    };
-
-
-}
-
-// Function for adding vehicles to the array
+// Function which adds new vehicles to the database
 const addVehiclesToArray = (vehicle, number) => {
     for (let i = 0; i < number; i++) {
         const newVehicle = new Vehicle(vehicle, i + 1);
@@ -71,38 +8,56 @@ const addVehiclesToArray = (vehicle, number) => {
     }
 };
 
-// Adding vehicles to the array
+// Function which adds random Warning to the Vehicle
+const addRandomWarning = (vehicleNumber, deviceNumber, componentNumber, repeatNumber= 1) => {
+    for(let i=0; i < repeatNumber; i++){
+        vehiclesArray[vehicleNumber-1].addWarning('Testowy warning', deviceNumber,componentNumber)
+    };
+};
+
+// Function which adds random Error to the Vehicle
+const addRandomError = (vehicleNumber, deviceNumber, componentNumber, repeatNumber= 1) => {
+    for(let i=0; i < repeatNumber; i++){
+        vehiclesArray[vehicleNumber-1].addError('Testowy błąd', deviceNumber,componentNumber)
+    };
+};
+
+
+// Our vehicle database
 const vehiclesArray = [];
-addVehiclesToArray("Autobus", 10);
-addVehiclesToArray("Tramwaj", 10);
+
+// Adding vehicles to the database
+addVehiclesToArray("Autobus", 5);
+addVehiclesToArray("Tramwaj", 5);
 
 
-// Use addError / addWarning to push errors/warnings to any Vehicle in your array
-// deviceNumber: 1 -> Biletomat nr 1 || deviceNumber: 2 -> Biletomat nr 2
+// Use addRandomError / addRandomWarning to push errors/warnings to any Vehicle in your array
+// vehicleNumber: choose any from 1 to 10 (1-5 bus, 6-10 tram)
+// deviceNumber: 1 -> Biletomat nr 1 / deviceNumber: 2 -> Biletomat nr 2
 // componentNumber: 1 -> payment terminal, 2 -> qr reader, 3 -> printer
+// repeatNumber: number of errors/warnings, default is 1, you can choose any number
 
-vehiclesArray[0].addError('Testowy błąd', 2,3);
-vehiclesArray[0].addError('Testowy błąd', 1,1);
+//Buses
+addRandomWarning(1, 1,1,10);
+addRandomWarning(1, 1,2,10);
 
-vehiclesArray[0].addWarning('Testowy warning', 2,3);
-vehiclesArray[0].addWarning('Testowy warning', 1,1);
-vehiclesArray[0].addWarning('Testowy warning', 1,1);
-vehiclesArray[0].addWarning('Testowy warning', 1,1);
+addRandomError(2,1,1,10);
+addRandomError(2,2,2,10);
 
-vehiclesArray[0].addWarning('Testowy warning', 1,2);
-vehiclesArray[0].addWarning('Testowy warning', 1,2);
-vehiclesArray[0].addWarning('Testowy warning', 1,3);
-
-vehiclesArray[0].addError('Testowy błąd', 1,2);
-vehiclesArray[0].addError('Testowy błąd', 1,3);
-vehiclesArray[0].addError('Testowy błąd', 1,3);
+addRandomWarning(3, 1,1,10);
+addRandomError(3,2,2,10);
 
 
-vehiclesArray[1].addError('Testowy błąd', 2,1);
-vehiclesArray[2].addError('Testowy błąd', 1,1);
+// Trams
+addRandomWarning(6, 1,1,10);
+addRandomWarning(6, 1,2,10);
 
-vehiclesArray[3].addWarning('Testowy warning', 1,2);
-// vehiclesArray[3].addError('Testowy błąd', 1,1);
+addRandomError(7,1,1,10);
+addRandomError(7,2,2,10);
+
+addRandomWarning(9, 1,1,10);
+addRandomError(9,2,2,10);
+
 
 
 export default vehiclesArray;
