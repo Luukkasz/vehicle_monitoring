@@ -52,6 +52,19 @@ function Vehicle({singleVehicle}) {
         warningsLength > 0 ? setHasWarning(true)
             : setHasWarning(false);
 
+
+        // setErrors({
+        //     terminal: [...errorsTerminalArray],
+        //     qr: [...errorsQrArray],
+        //     printer: [...errorsPrinterArray]
+        // });
+        //
+        // setWarnings({
+        //     terminal: [...warningsTerminalArray],
+        //     qr: [...warningsQrArray],
+        //     printer: [...warningsPrinterArray]
+        // })
+
     }, [singleVehicle])
 
     return (
