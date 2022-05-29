@@ -4,12 +4,19 @@
 }
 
 .singleComponent__name {
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .singleComponent__info {
   margin-left: 10px;
-  color: red;
+  color: #ff7070;
+}
+
+.singleComponent__btn {
+  width: 70px;
+  border: none;
+  background-color: #e5eeff;
+  border-radius: 25px;
 }
 
 .singleComponent__componentsWrapper {
@@ -22,11 +29,11 @@
 }
 
 .singleComponent__warningMessage {
-  color: orange;
+  color: #ffc65e;;
 }
 
 .singleComponent__errorMessage{
-  color: red;
+  color: #ff7070;
 }
 
 .singleComponent__listItem {

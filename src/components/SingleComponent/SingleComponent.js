@@ -31,8 +31,9 @@ function SingleComponent({singleComponent}) {
                     </span>
                 </div>
 
-
-                <button onClick={handleClick}>
+                <button
+                    className="singleComponent__btn"
+                    onClick={handleClick}>
                     {isOpen ? 'Ukryj'
                         : 'Rozwiń'}
                 </button>
@@ -67,12 +68,8 @@ function SingleComponent({singleComponent}) {
                             })}
                         </ul>
                     </div>
-
-
                 </>
-
             }
-
         </>
     );
 }

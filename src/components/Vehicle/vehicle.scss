@@ -1,7 +1,6 @@
 .vehicle__infoWrapper {
   display: flex;
   justify-content: space-between;
-  //background-color: green;
 }
 
 .vehicle__name {
@@ -9,21 +8,29 @@
 }
 
 .vehicle__status {
-  background-color: green;
+  background-color: #43d543;
   padding: 3px 10px;
+  border-radius: 25px;
 
   &--both {
-    background-color: red;
+    background-color: #ff7070;
   }
 
   &--warning {
-    background-color: orange;
+    background-color: #ffc65e;
   }
 
   &--error {
-    background-color: red;
+    background-color: #ff7070;
   }
+}
 
+.vehicle__btn {
+  width: 140px;
+  padding: 0 5px;
+  border: none;
+  border-radius: 25px;
+  background-color: #e5eeff;
 }
 
 .vehicle__devicesWrapper {

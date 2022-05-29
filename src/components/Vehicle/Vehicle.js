@@ -52,19 +52,6 @@ function Vehicle({singleVehicle}) {
         warningsLength > 0 ? setHasWarning(true)
             : setHasWarning(false);
 
-
-        // setErrors({
-        //     terminal: [...errorsTerminalArray],
-        //     qr: [...errorsQrArray],
-        //     printer: [...errorsPrinterArray]
-        // });
-        //
-        // setWarnings({
-        //     terminal: [...warningsTerminalArray],
-        //     qr: [...warningsQrArray],
-        //     printer: [...warningsPrinterArray]
-        // })
-
     }, [singleVehicle])
 
     return (
@@ -84,7 +71,9 @@ function Vehicle({singleVehicle}) {
                                 : 'Status: Ok'}
 
                 </p>
-                <button onClick={handleClick}>
+                <button
+                    className="vehicle__btn"
+                    onClick={handleClick}>
                     {isOpen ? 'Ukryj urządzenia'
                         : 'Wyświetl urządzenia'}
                 </button>

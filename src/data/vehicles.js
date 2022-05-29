@@ -86,6 +86,17 @@ vehiclesArray[0].addError('Testowy błąd', 1,1);
 
 vehiclesArray[0].addWarning('Testowy warning', 2,3);
 vehiclesArray[0].addWarning('Testowy warning', 1,1);
+vehiclesArray[0].addWarning('Testowy warning', 1,1);
+vehiclesArray[0].addWarning('Testowy warning', 1,1);
+
+vehiclesArray[0].addWarning('Testowy warning', 1,2);
+vehiclesArray[0].addWarning('Testowy warning', 1,2);
+vehiclesArray[0].addWarning('Testowy warning', 1,3);
+
+vehiclesArray[0].addError('Testowy błąd', 1,2);
+vehiclesArray[0].addError('Testowy błąd', 1,3);
+vehiclesArray[0].addError('Testowy błąd', 1,3);
+
 
 vehiclesArray[1].addError('Testowy błąd', 2,1);
 vehiclesArray[2].addError('Testowy błąd', 1,1);
