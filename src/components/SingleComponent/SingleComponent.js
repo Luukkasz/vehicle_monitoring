@@ -1,20 +1,37 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import "./singleComponent.scss";
 
 
 function SingleComponent({singleComponent}) {
+    const [warnings, setWarnings] = useState([]);
+    const [errors, setErrors] = useState([]);
+
     const [isOpen, setIsOpen] = useState(false);
     const handleClick = () => setIsOpen(!isOpen);
 
 
-    // useEffect(() => {
-    //     console.log(singleComponent);
-    // }, )
+    useEffect(() => {
+        const errorsInComponent = singleComponent.errors;
+        const warningsInComponent = singleComponent.warnings;
+
+        setErrors(errorsInComponent);
+        setWarnings(warningsInComponent);
+
+    }, [singleComponent])
 
     return (
         <>
             <div className="singleComponent__infoWrapper">
-                <p className="singleComponent__name">{singleComponent.name}</p>
+                <div>
+                    <span className="singleComponent__name">{singleComponent.name}</span>
+                    <span className="singleComponent__info">
+                    {warnings.length > 0 || errors.length > 0 ?
+                        `(${warnings.length} ostrzeżeń i ${errors.length} błędów)`
+                        : ''}
+                    </span>
+                </div>
+
+
                 <button onClick={handleClick}>
                     {isOpen ? 'Ukryj'
                         : 'Rozwiń'}
@@ -24,18 +41,18 @@ function SingleComponent({singleComponent}) {
 
             {isOpen &&
                 <>
-                <div className="singleComponent__componentsWrapper">
-                    <p className="singleComponent__componentsTitle">Ostrzeżenia: </p>
-                    <ul>
-                        {singleComponent.warnings.map((singleWarning, index) => {
-                            return <li key={index}>
-                                <p className="singleComponent__warningMessage">
-                                    {singleWarning}
-                                </p>
-                            </li>
-                        })}
-                    </ul>
-                </div>
+                    <div className="singleComponent__componentsWrapper">
+                        <p className="singleComponent__componentsTitle">Ostrzeżenia: </p>
+                        <ul>
+                            {singleComponent.warnings.map((singleWarning, index) => {
+                                return <li key={index}>
+                                    <p className="singleComponent__warningMessage">
+                                        {singleWarning}
+                                    </p>
+                                </li>
+                            })}
+                        </ul>
+                    </div>
 
 
                     <div className="singleComponent__componentsWrapper">
@@ -52,7 +69,7 @@ function SingleComponent({singleComponent}) {
                     </div>
 
 
-                    </>
+                </>
 
             }
 

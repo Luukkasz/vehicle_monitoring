@@ -80,6 +80,7 @@ addVehiclesToArray("Tramwaj", 10);
 // Use addError / addWarning to push errors/warnings to any Vehicle in your array
 // deviceNumber: 1 -> Biletomat nr 1 || deviceNumber: 2 -> Biletomat nr 2
 // componentNumber: 1 -> payment terminal, 2 -> qr reader, 3 -> printer
+
 vehiclesArray[0].addError('Testowy błąd', 2,3);
 vehiclesArray[0].addError('Testowy błąd', 1,1);
 
