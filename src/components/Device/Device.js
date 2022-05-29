@@ -27,7 +27,7 @@ function Device({singleDevice}) {
     return (
         <>
             <div className="device__infoWrapper">
-                <div>
+                <div className="device__nameWrapper">
                     <span className="device__name">{singleDevice.name}</span>
                     <span className="device__info">
                     {warnings.length > 0 && errors.length > 0 ?

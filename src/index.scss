@@ -9,4 +9,12 @@ body {
   font-family: 'Roboto', sans-serif;
   background-color: #eef0f5;
   color: #374b52;
+
+  @media(max-width: 1024px){
+    font-size: 14px;
+  }
+
+  @media(max-width: 800px){
+    font-size: 12px;
+  }
 }

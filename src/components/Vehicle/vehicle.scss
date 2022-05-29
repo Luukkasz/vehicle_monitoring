@@ -1,6 +1,10 @@
 .vehicle__infoWrapper {
   display: flex;
   justify-content: space-between;
+
+  @media(max-width: 800px){
+    gap: 30px;
+  }
 }
 
 .vehicle__name {
@@ -23,6 +27,11 @@
   &--error {
     background-color: #ff7070;
   }
+
+  @media(max-width:800px){
+    padding: 3px 15px;
+    border-radius: 22px;
+  }
 }
 
 .vehicle__btn {
@@ -35,6 +44,14 @@
 
 .vehicle__devicesWrapper {
   padding: 15px 0 0 45px;
+
+  @media(max-width: 1024px){
+    padding: 15px 0 0 35px;
+  }
+
+  @media(max-width: 800px){
+    padding: 15px 0 0 15px;
+  }
 }
 
 
@@ -45,4 +62,8 @@
 
 .vehicle__listItem:not(:last-child) {
   margin-bottom: 20px;
+
+  @media(max-width: 800px){
+    margin-bottom: 30px;
+  }
 }
