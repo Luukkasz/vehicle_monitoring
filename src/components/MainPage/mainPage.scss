@@ -1,3 +1,7 @@
+.mainPage{
+  margin: 0 30px;
+}
+
 .mainPage__container{
   height: 75vh;
   width: 100%;
@@ -9,10 +13,18 @@
   box-shadow: 0 5px 15px -10px rgb(0 0 0 / 30%);
   background-color: #fbfbfb;
   overflow: auto;
+
+  @media(max-width: 1024px){
+    padding: 20px;
+  }
+
+  @media(max-width: 800px){
+    padding: 10px;
+  }
 }
 
 .mainPage__searchWrapper{
-  margin-bottom: 20px;
+  margin: 20px 0;
   text-align: center;
 }
 
