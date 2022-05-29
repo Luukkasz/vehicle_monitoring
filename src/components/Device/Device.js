@@ -9,6 +9,7 @@ function Device({singleDevice}) {
     const [isOpen, setIsOpen] = useState(false);
     const handleClick = () => setIsOpen(!isOpen);
 
+    // Function that sets current errors / warnings to component state
     useEffect(() => {
         const errorsInDevice = singleDevice.components
             .map(component => component.errors)

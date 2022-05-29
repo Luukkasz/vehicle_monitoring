@@ -7,9 +7,7 @@ function App() {
     return (
         <>
             <Header/>
-            <MainPage
-                vehiclesArray={vehiclesArray}
-            />
+            <MainPage vehiclesArray={vehiclesArray}/>
         </>
     )
 }

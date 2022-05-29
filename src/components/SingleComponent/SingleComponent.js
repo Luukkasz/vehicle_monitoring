@@ -9,7 +9,7 @@ function SingleComponent({singleComponent}) {
     const [isOpen, setIsOpen] = useState(false);
     const handleClick = () => setIsOpen(!isOpen);
 
-
+    // Function that sets current faults / warnings to component state
     useEffect(() => {
         const errorsInComponent = singleComponent.errors;
         const warningsInComponent = singleComponent.warnings;
